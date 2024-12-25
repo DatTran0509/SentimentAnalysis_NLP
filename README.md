@@ -1,4 +1,4 @@
-readme_content = """
+
 <!-- Banner -->
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông Tin" style="border: none;">
@@ -44,7 +44,4 @@ streamlit run app.py
 
 Copyright © 2025
 """
-
-with open("README.md", "w", encoding="utf-8") as file:
-    file.write(readme_content)
 
