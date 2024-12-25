@@ -5,7 +5,7 @@ from PIL import Image
 from keras.models import load_model
 import pickle
 from underthesea import word_tokenize
-from utils.preprocessing import remove_punctuation
+from utils.preprocessing import remove_punctuation, remove_special_characters, remove_html_tags
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,7 +18,7 @@ with open("utils/words_dict.pkl", "rb") as file:
 DESIRED_SEQUENCE_LENGTH = 205
 
 def tokenize_vietnamese_sentence(sentence):
-    return word_tokenize(remove_punctuation(sentence.lower()))
+    return word_tokenize(remove_special_characters(remove_html_tags(remove_punctuation(sentence.lower()))))
 
 def sent2vec(message, word_dict = words):
     tokens = tokenize_vietnamese_sentence(message)
@@ -91,11 +91,10 @@ def getSentiments(userText):
         
 
 # def renderPage():
-#     st.title("Vietnamese Student Feedback Sentiment Analysis 😊😐😕")
+#     st.title("Vietnamese Student Feedback About Education Equality Sentiment Analysis 😊😐😕")
 #     components.html("""<hr style="height:3px;border:none;color:#333;background-color:#333; margin-bottom: 5px" /> """)
 #     # st.markdown("### User Input Text Analysis")
 #     st.subheader("Phân tích Feedback của học sinh.")
-#     st.text("Phân tích feedback của học sinh, sinh viên và trả về cảm xúc của nó")
 #     st.text("")
 #     userText = st.text_input('User Input', placeholder='Input text HERE')
 #     if st.button('Analyze'):
@@ -106,7 +105,7 @@ def getSentiments(userText):
 #             getSentiments(userText)
 
 def renderPage():
-    st.title("Vietnamese Student Feedback Sentiment Analysis 😊😐😕")
+    st.title("Vietnamese Student Feedback Education Equality Sentiment Analysis 😊😐😕")
     
     # Add images using HTML and CSS
     st.markdown("""
@@ -123,7 +122,6 @@ def renderPage():
     st.image(decor)
     
     st.subheader("Phân tích Feedback của học sinh.")
-    st.text("Phân tích feedback của học sinh, sinh viên và trả về cảm xúc của nó")
     st.text("")
     userText = st.text_input('User Input', placeholder='Input text HERE')
     

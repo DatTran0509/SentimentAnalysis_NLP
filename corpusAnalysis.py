@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import plotly.graph_objs as go
 from utils.preprocessing import readData
+from utils.preprocessing import remove_punctuation, remove_special_characters, remove_html_tags
 from keras.models import load_model
 from utils.classify import feedbackSentimentAnalysis
 import numpy as np
@@ -22,7 +23,7 @@ with open("utils/words_dict.pkl", "rb") as file:
 DESIRED_SEQUENCE_LENGTH = 205
 
 def tokenize_vietnamese_sentence(sentence):
-    return word_tokenize(sentence.lower())
+    return word_tokenize(remove_special_characters(remove_html_tags(remove_punctuation(sentence.lower()))))
 
 def sent2vec(message, word_dict=words):
     tokens = tokenize_vietnamese_sentence(message)

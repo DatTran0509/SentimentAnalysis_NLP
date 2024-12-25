@@ -1,6 +1,7 @@
 from underthesea import sent_tokenize, word_tokenize
 import re
 import string
+from bs4 import BeautifulSoup
 
 # Get stopwords
 with open("vietnamese_stopwords/vietnamese-stopwords.txt", "r", encoding="utf-8") as file:
@@ -33,6 +34,16 @@ def remove_punctuation(input_string):
 def remove_digit(input_string):
     result_string = re.sub(r"\d+", "",input_string)
     return result_string
+
+def remove_special_characters(input_string):
+    result_string = re.sub(r"[^\w\s]", "", input_string)
+    return result_string
+
+def to_lowercase(input_string):
+    return input_string.lower()
+
+def remove_html_tags(input_string):
+    return BeautifulSoup(input_string, "html.parser").get_text()
 
 def readData(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
