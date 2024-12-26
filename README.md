@@ -9,7 +9,7 @@
 <h1 align="center"><b>CS221 - Xử Lý Ngôn Ngữ Tự Nhiên</b></h1>
 
 # ĐỒ Án Cuối Kỳ
-* **Đề tài:** Sentiment Analysis on Feedback about Quality of Education
+* **Đề tài:** Sentiment Analysis on Student Feedback about Quality of Education
 
 ---
 
