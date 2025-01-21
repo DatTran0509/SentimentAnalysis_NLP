@@ -39,7 +39,7 @@ streamlit run app.py
 ---
 
 ## Thông Tin Liên Hệ
-- **Trần Quang Đạt** (22520236@gm.uit.edu.vn)
+- **Trần Quang Đạt** (22520236@gm.uit.edu.vn) (Phone: 0844376333)
 - **Nguyễn Ấn** (22520019@gm.uit.edu.vn)
 
 Copyright © 2025
