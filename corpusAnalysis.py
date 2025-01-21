@@ -15,7 +15,7 @@ from underthesea import word_tokenize
 st.set_page_config(layout="wide")
 
 # Load Model
-model = load_model("models/lstm_model.h5")
+model = load_model("models/best_lstm_model.h5")
 
 with open("utils/words_dict.pkl", "rb") as file:
     words = pickle.load(file)
